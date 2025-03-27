@@ -1,0 +1,15 @@
+image: node:16-alpine
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - npm install -g newman
+
+test:
+  stage: test
+  script:
+    - newman run collection.json
